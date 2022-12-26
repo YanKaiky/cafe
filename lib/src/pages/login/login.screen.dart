@@ -1,7 +1,6 @@
 import 'package:cafe/src/pages/login/components/customshape.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -54,9 +53,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             height: size.height / 2,
                             color: Colors.black.withOpacity(0.7),
                             child: Center(
-                              child: Text(
-                                'Coffy',
-                                style: GoogleFonts.bebasNeue(fontSize: 54),
+                              child: Image.asset(
+                                'assets/images/coffy-shop-without-background.png',
+                                width: 200,
                               ),
                             ),
                           ),
