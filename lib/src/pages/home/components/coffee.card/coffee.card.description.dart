@@ -15,9 +15,15 @@ class CoffeCardDescription extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(12),
-          child: Image.asset(coffee.image),
+        Container(
+          height: 180,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage(coffee.image),
+            ),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(
@@ -28,12 +34,16 @@ class CoffeCardDescription extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                coffee.name,
+                coffee.name.length >= 14
+                    ? '${coffee.name.substring(0, 14)}...'
+                    : coffee.name,
                 style: TextStyle(fontSize: 20),
               ),
               SizedBox(height: 5),
               Text(
-                coffee.description,
+                coffee.description.length >= 22
+                    ? '${coffee.description.substring(0, 22)}...'
+                    : coffee.description,
                 style: TextStyle(color: Colors.grey[700]),
               ),
             ],
