@@ -1,4 +1,5 @@
 import 'package:cafe/src/pages/home/home.screen.dart';
+import 'package:cafe/src/pages/login/login.screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -13,7 +14,11 @@ class App extends StatelessWidget {
         primarySwatch: Colors.orange,
         brightness: Brightness.dark,
       ),
-      home: HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginScreen(),
+        '/browse': (context) => HomePage(),
+      },
     );
   }
 }

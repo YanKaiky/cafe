@@ -16,6 +16,7 @@ class BodyHomeScreen extends StatefulWidget {
 class _BodyHomeScreenState extends State<BodyHomeScreen> {
   final List coffeeType = [
     ['Cappuccino', true],
+    ['Espresso', false],
     ['Latte', false],
     ['Black', false],
     ['Tea', false],
