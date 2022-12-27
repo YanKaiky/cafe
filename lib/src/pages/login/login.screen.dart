@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:cafe/src/pages/login/components/customshape.dart';
 import 'package:cafe/src/utils/constants.dart';
-import 'package:flutter/material.dart';
+import 'package:cafe/src/utils/user.secure.storage.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -15,6 +16,25 @@ class _LoginScreenState extends State<LoginScreen> {
 
   String email = '';
   String password = '';
+
+  @override
+  void initState() {
+    super.initState();
+    init();
+  }
+
+  Future init() async {
+    final mail = await UserSecureStorage.getEmail() ?? '';
+    final pass = await UserSecureStorage.getPassword() ?? '';
+
+    _initialEmail = TextEditingController(text: mail);
+    _initialPassword = TextEditingController(text: pass);
+
+    setState(() {
+      email = mail;
+      password = pass;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -157,6 +177,9 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
         onPressed: () async {
+          await UserSecureStorage.setEmail(email);
+          await UserSecureStorage.setPassword(password);
+
           if (email == 'yankaikys@gmail.com' && password == '123') {
             Navigator.of(context).pushReplacementNamed('/browse');
           } else {

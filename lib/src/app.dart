@@ -1,5 +1,6 @@
 import 'package:cafe/src/pages/home/home.screen.dart';
 import 'package:cafe/src/pages/login/login.screen.dart';
+import 'package:cafe/src/pages/splash/splash.screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -9,14 +10,15 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Coffee',
+      title: 'Coffy',
       theme: ThemeData(
         primarySwatch: Colors.orange,
         brightness: Brightness.dark,
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginScreen(),
+        '/': (context) => SplashScreen(),
+        '/login': (context) => LoginScreen(),
         '/browse': (context) => HomePage(),
       },
     );
