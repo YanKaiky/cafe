@@ -3,6 +3,7 @@ class CoffeesModel {
   final double price;
   final String name;
   final String description;
+  final bool favorite;
   final String image;
   final DateTime createdAt;
   final DateTime updatedAt;
@@ -12,6 +13,7 @@ class CoffeesModel {
     this.price,
     this.name,
     this.description,
+    this.favorite,
     this.image,
     this.createdAt,
     this.updatedAt,

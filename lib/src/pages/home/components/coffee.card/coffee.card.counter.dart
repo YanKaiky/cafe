@@ -1,4 +1,5 @@
 import 'package:cafe/models/coffees.model.dart';
+import 'package:cafe/src/pages/details/details.page.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +48,12 @@ class CoffeeCardCounter extends StatelessWidget {
             ),
             child: IconButton(
               icon: Icon(Icons.add),
-              onPressed: () {},
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsPage(coffee: coffee),
+                ),
+              ),
             ),
           )
         ],
