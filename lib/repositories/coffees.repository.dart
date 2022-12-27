@@ -56,5 +56,23 @@ class CoffeesRepository {
       DateTime.parse('2022-12-25T09:22:50.270Z'),
       DateTime.parse('2022-12-25T09:22:50.270Z'),
     ),
+    CoffeesModel(
+      '68eb6fac-b281-473e-bff6-0030baa86110',
+      4.5,
+      'Tea',
+      'Hot or Iced',
+      'assets/images/tea.jpg',
+      DateTime.parse('2022-12-25T09:22:50.270Z'),
+      DateTime.parse('2022-12-25T09:22:50.270Z'),
+    ),
+    CoffeesModel(
+      '68eb6fac-b281-473e-bff6-0030baa86110',
+      5.0,
+      'Donut',
+      'Black Chocolate or White Chocolate.',
+      'assets/images/donut.jpg',
+      DateTime.parse('2022-12-25T09:22:50.270Z'),
+      DateTime.parse('2022-12-25T09:22:50.270Z'),
+    ),
   ];
 }

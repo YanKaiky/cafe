@@ -15,11 +15,12 @@ class BodyHomeScreen extends StatefulWidget {
 
 class _BodyHomeScreenState extends State<BodyHomeScreen> {
   final List coffeeType = [
-    ['Cappuccino', true],
+    ['All', true],
+    ['Cappuccino', false],
     ['Espresso', false],
-    ['Latte', false],
     ['Black', false],
     ['Tea', false],
+    ['Food', false],
   ];
 
   void coffeeTypeSelected(int index) {

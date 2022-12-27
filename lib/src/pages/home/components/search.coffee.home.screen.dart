@@ -16,9 +16,11 @@ class SearchCoffeeHomeScreen extends StatelessWidget {
           hintText: 'Find your coffee ☕ ...',
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey.shade600),
+            borderRadius: BorderRadius.circular(12.0),
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey.shade600),
+            borderRadius: BorderRadius.circular(12.0),
           ),
         ),
       ),
