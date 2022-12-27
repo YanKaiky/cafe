@@ -2,6 +2,7 @@ import 'package:cafe/src/pages/home/components/coffee.type.dart';
 import 'package:cafe/src/pages/home/components/list.body.home.page.dart';
 import 'package:cafe/src/pages/home/components/search.coffee.home.page.dart';
 import 'package:cafe/src/pages/home/components/title.home.page.dart';
+import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class BodyHomePage extends StatefulWidget {
@@ -54,6 +55,7 @@ class _BodyHomePageState extends State<BodyHomePage> {
     return SizedBox(
       height: size.height / 12,
       child: ListView.builder(
+        padding: EdgeInsets.only(right: yDefaultPadding + 5),
         scrollDirection: Axis.horizontal,
         itemCount: coffeeType.length,
         itemBuilder: (context, i) {

@@ -74,6 +74,7 @@ class StackImageWithName extends StatelessWidget {
               color: Colors.black.withOpacity(0.4),
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   coffee.name,
