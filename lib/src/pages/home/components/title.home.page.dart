@@ -2,8 +2,8 @@ import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TitleHomeScreen extends StatelessWidget {
-  const TitleHomeScreen({
+class TitleHomePage extends StatelessWidget {
+  const TitleHomePage({
     Key? key,
   }) : super(key: key);
 

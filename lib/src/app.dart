@@ -1,5 +1,5 @@
-import 'package:cafe/src/pages/home/home.screen.dart';
-import 'package:cafe/src/pages/login/login.screen.dart';
+import 'package:cafe/src/pages/home/home.page.dart';
+import 'package:cafe/src/pages/login/login.page.dart';
 import 'package:cafe/src/pages/splash/splash.screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class App extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
-        '/login': (context) => LoginScreen(),
+        '/login': (context) => LoginPage(),
         '/browse': (context) => HomePage(),
       },
     );

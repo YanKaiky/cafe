@@ -2,8 +2,8 @@ import 'package:cafe/repositories/coffees.repository.dart';
 import 'package:cafe/src/pages/home/components/coffee.card/coffee.card.dart';
 import 'package:flutter/material.dart';
 
-class ListBodyHomeScreen extends StatelessWidget {
-  const ListBodyHomeScreen({
+class ListBodyHomePage extends StatelessWidget {
+  const ListBodyHomePage({
     Key? key,
   }) : super(key: key);
 

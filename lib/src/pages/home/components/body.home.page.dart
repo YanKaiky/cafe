@@ -1,19 +1,19 @@
 import 'package:cafe/src/pages/home/components/coffee.type.dart';
-import 'package:cafe/src/pages/home/components/list.body.home.screen.dart';
-import 'package:cafe/src/pages/home/components/search.coffee.home.screen.dart';
-import 'package:cafe/src/pages/home/components/title.home.screen.dart';
+import 'package:cafe/src/pages/home/components/list.body.home.page.dart';
+import 'package:cafe/src/pages/home/components/search.coffee.home.page.dart';
+import 'package:cafe/src/pages/home/components/title.home.page.dart';
 import 'package:flutter/material.dart';
 
-class BodyHomeScreen extends StatefulWidget {
-  const BodyHomeScreen({
+class BodyHomePage extends StatefulWidget {
+  const BodyHomePage({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<BodyHomeScreen> createState() => _BodyHomeScreenState();
+  State<BodyHomePage> createState() => _BodyHomePageState();
 }
 
-class _BodyHomeScreenState extends State<BodyHomeScreen> {
+class _BodyHomePageState extends State<BodyHomePage> {
   final List coffeeType = [
     ['All', true],
     ['Cappuccino', false],
@@ -39,12 +39,12 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          TitleHomeScreen(),
+          TitleHomePage(),
           SizedBox(height: 25),
-          SearchCoffeeHomeScreen(),
+          SearchCoffeeHomePage(),
           SizedBox(height: 25),
           _listCoffeType(size),
-          ListBodyHomeScreen(),
+          ListBodyHomePage(),
         ],
       ),
     );

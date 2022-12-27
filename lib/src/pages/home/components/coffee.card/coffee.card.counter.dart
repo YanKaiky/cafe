@@ -19,11 +19,31 @@ class CoffeeCardCounter extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('\$${coffee.price}'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                '\$',
+                style: TextStyle(
+                  color: Colors.orange,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(width: 10),
+              Text(
+                coffee.price.toStringAsFixed(2),
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
           Container(
             decoration: BoxDecoration(
               color: Colors.orange,
-              borderRadius: BorderRadius.circular(6),
+              borderRadius: BorderRadius.circular(12),
             ),
             child: IconButton(
               icon: Icon(Icons.add),

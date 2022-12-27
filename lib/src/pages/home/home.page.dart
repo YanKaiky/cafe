@@ -1,5 +1,5 @@
-import 'package:cafe/src/pages/home/components/body.home.screen.dart';
-import 'package:cafe/src/pages/home/components/bottom.home.navigaton.bar.dart';
+import 'package:cafe/src/pages/home/components/body.home.page.dart';
+import 'package:cafe/components/bottom.navigaton.bar.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -16,8 +16,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[900],
       appBar: _buildAppBar(),
-      body: BodyHomeScreen(),
-      bottomNavigationBar: BottomHomeNavigatonBar(),
+      body: BodyHomePage(),
+      bottomNavigationBar: AppBottomNavigatonBar(),
     );
   }
 

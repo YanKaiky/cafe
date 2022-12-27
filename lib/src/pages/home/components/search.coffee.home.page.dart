@@ -1,8 +1,8 @@
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class SearchCoffeeHomeScreen extends StatelessWidget {
-  const SearchCoffeeHomeScreen({
+class SearchCoffeeHomePage extends StatelessWidget {
+  const SearchCoffeeHomePage({
     Key? key,
   }) : super(key: key);
 

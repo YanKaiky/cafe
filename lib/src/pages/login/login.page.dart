@@ -3,14 +3,14 @@ import 'package:cafe/src/pages/login/components/customshape.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:cafe/src/utils/user.secure.storage.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginPageState extends State<LoginPage> {
   TextEditingController? _initialEmail;
   TextEditingController? _initialPassword;
 

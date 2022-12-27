@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BottomHomeNavigatonBar extends StatelessWidget {
-  const BottomHomeNavigatonBar({
+class AppBottomNavigatonBar extends StatelessWidget {
+  const AppBottomNavigatonBar({
     Key? key,
   }) : super(key: key);
 
