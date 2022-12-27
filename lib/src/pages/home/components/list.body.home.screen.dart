@@ -9,9 +9,12 @@ class ListBodyHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     final coffees = CoffeesRepository.coffees;
 
-    return Expanded(
+    return SizedBox(
+      height: size.height * 0.5,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: coffees.length,

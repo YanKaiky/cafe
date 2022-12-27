@@ -33,28 +33,36 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TitleHomeScreen(),
-        SizedBox(height: 25),
-        SearchCoffeeHomeScreen(),
-        SizedBox(height: 25),
-        SizedBox(
-          height: 50,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: coffeeType.length,
-            itemBuilder: (context, i) {
-              return CoffeeType(
-                type: coffeeType[i][0],
-                isSelected: coffeeType[i][1],
-                onTap: () => coffeeTypeSelected(i),
-              );
-            },
-          ),
-        ),
-        ListBodyHomeScreen(),
-      ],
+    Size size = MediaQuery.of(context).size;
+
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          TitleHomeScreen(),
+          SizedBox(height: 25),
+          SearchCoffeeHomeScreen(),
+          SizedBox(height: 25),
+          _listCoffeType(size),
+          ListBodyHomeScreen(),
+        ],
+      ),
+    );
+  }
+
+  SizedBox _listCoffeType(Size size) {
+    return SizedBox(
+      height: size.height / 12,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: coffeeType.length,
+        itemBuilder: (context, i) {
+          return CoffeeType(
+            type: coffeeType[i][0],
+            isSelected: coffeeType[i][1],
+            onTap: () => coffeeTypeSelected(i),
+          );
+        },
+      ),
     );
   }
 }

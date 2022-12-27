@@ -84,7 +84,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         prefixIcon: Icon(Icons.email_rounded),
                         labelText: 'Email',
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(width: 2.0),
+                          borderSide: BorderSide(
+                            width: 2.0,
+                            color: Colors.orange,
+                          ),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         border: OutlineInputBorder(
@@ -104,7 +107,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         prefixIcon: Icon(Icons.key_rounded),
                         labelText: 'Password',
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(width: 2.0),
+                          borderSide: BorderSide(
+                            width: 2.0,
+                            color: Colors.orange,
+                          ),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         border: OutlineInputBorder(
