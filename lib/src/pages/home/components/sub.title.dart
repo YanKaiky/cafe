@@ -8,9 +8,11 @@ class SubTitle extends StatelessWidget {
     Key? key,
     required this.subtitle,
     required this.press,
+    required this.visible,
   }) : super(key: key);
 
   final String subtitle;
+  final bool visible;
   final VoidCallback press;
 
   @override
@@ -31,20 +33,23 @@ class SubTitle extends StatelessWidget {
                 subtitle,
                 style: GoogleFonts.poppins(color: Colors.white60),
               ),
-              Column(
-                children: [
-                  ButtonAllView(
-                    size: 'M',
-                    press: press,
-                  ),
-                  Text(
-                    'See all',
-                    style: GoogleFonts.poppins(
-                      color: Colors.white60,
-                      fontSize: 8,
+              Visibility(
+                visible: visible,
+                child: Column(
+                  children: [
+                    ButtonAllView(
+                      size: 'M',
+                      press: press,
                     ),
-                  )
-                ],
+                    Text(
+                      'See all',
+                      style: GoogleFonts.poppins(
+                        color: Colors.white60,
+                        fontSize: 8,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ],
           ),

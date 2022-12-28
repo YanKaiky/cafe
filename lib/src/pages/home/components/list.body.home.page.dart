@@ -26,14 +26,17 @@ class ListBodyHomePage extends StatelessWidget {
         itemCount: (coffeesLength > 7 ? 7 : coffeesLength) + 1,
         itemBuilder: (context, i) {
           if (i == (coffeesLength > 7 ? 7 : coffeesLength)) {
-            return ButtonAllView(
-              size: 'L',
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ListPage()),
-                );
-              },
+            return Visibility(
+              visible: coffeesLength > 3 ? true : false,
+              child: ButtonAllView(
+                size: 'L',
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ListPage()),
+                  );
+                },
+              ),
             );
           }
 

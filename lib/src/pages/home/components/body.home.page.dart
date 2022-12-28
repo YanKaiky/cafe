@@ -58,6 +58,7 @@ class _BodyHomePageState extends State<BodyHomePage> {
           SizedBox(height: 25),
           _listCoffeType(size),
           SubTitle(
+            visible: drinks.length > 3 ? true : false,
             subtitle: 'Drinks',
             press: () {
               Navigator.push(
@@ -68,6 +69,7 @@ class _BodyHomePageState extends State<BodyHomePage> {
           ),
           ListBodyHomePage(coffees: drinks),
           SubTitle(
+            visible: foods.length > 3 ? true : false,
             subtitle: 'Food',
             press: () {
               Navigator.push(
@@ -77,6 +79,28 @@ class _BodyHomePageState extends State<BodyHomePage> {
             },
           ),
           ListBodyHomePage(coffees: foods),
+          SubTitle(
+            visible: takesDrink.length > 3 ? true : false,
+            subtitle: 'Takes drink',
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ListPage()),
+              );
+            },
+          ),
+          ListBodyHomePage(coffees: takesDrink),
+          SubTitle(
+            visible: takesFood.length > 3 ? true : false,
+            subtitle: 'Takes food',
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ListPage()),
+              );
+            },
+          ),
+          ListBodyHomePage(coffees: takesFood),
         ],
       ),
     );
