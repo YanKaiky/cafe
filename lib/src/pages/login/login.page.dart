@@ -100,6 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                       onChanged: (value) => email = value,
                       controller: _initialEmail,
                       keyboardType: TextInputType.emailAddress,
+                      textInputAction: TextInputAction.next,
                       decoration: InputDecoration(
                         prefixIcon: Icon(Icons.email_rounded),
                         labelText: 'Email',
@@ -123,6 +124,18 @@ class _LoginPageState extends State<LoginPage> {
                       onChanged: (value) => password = value,
                       controller: _initialPassword,
                       obscureText: true,
+                      textInputAction: TextInputAction.done,
+                      onSubmitted: (value) async {
+                        await UserSecureStorage.setEmail(email);
+                        await UserSecureStorage.setPassword(password);
+
+                        if (email == 'yankaikys@gmail.com' &&
+                            password == '123') {
+                          Navigator.of(context).pushReplacementNamed('/browse');
+                        } else {
+                          print('Invalid login');
+                        }
+                      },
                       decoration: InputDecoration(
                         prefixIcon: Icon(Icons.key_rounded),
                         labelText: 'Password',

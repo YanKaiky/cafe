@@ -1,5 +1,7 @@
+import 'package:cafe/components/app.menu.drawer.dart';
 import 'package:cafe/src/pages/home/components/body.home.page.dart';
 import 'package:cafe/components/bottom.navigaton.bar.dart';
+import 'package:cafe/src/pages/profile/profile.page.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[900],
+      drawer: AppMenuDrawer(),
       appBar: _buildAppBar(),
       body: BodyHomePage(),
       bottomNavigationBar: AppBottomNavigatonBar(),
@@ -25,16 +28,17 @@ class _HomePageState extends State<HomePage> {
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.transparent,
-      leading: IconButton(
-        icon: Icon(Icons.menu_rounded),
-        onPressed: () {},
-      ),
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: yDefaultPadding / 2),
           child: IconButton(
             icon: Icon(Icons.person_rounded),
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProfilePage(),
+              ),
+            ),
           ),
         ),
       ],
