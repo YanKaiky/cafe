@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cafe/models/coffees.model.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -23,9 +24,29 @@ class StackImageWithName extends StatelessWidget {
           height: size.height / 1.6,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
-            image: DecorationImage(
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(30),
+            child: CachedNetworkImage(
+              imageUrl: coffee.image,
               fit: BoxFit.cover,
-              image: NetworkImage(coffee.image, scale: 1.0),
+              imageBuilder: (context, imageProvider) => Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: imageProvider,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              placeholder: (context, url) => Center(
+                child: SizedBox(
+                  height: 40,
+                  width: 40,
+                  child: CircularProgressIndicator(
+                    color: Colors.orange,
+                  ),
+                ),
+              ),
             ),
           ),
         ),

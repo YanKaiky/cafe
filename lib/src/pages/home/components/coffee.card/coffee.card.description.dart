@@ -15,12 +15,14 @@ class CoffeCardDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 180,
-          width: 180,
+          height: size.height / 4,
+          width: size.width * 2,
           decoration: BoxDecoration(
             color: Colors.white10,
             borderRadius: BorderRadius.circular(12),
@@ -30,6 +32,14 @@ class CoffeCardDescription extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl: coffee.image,
               fit: BoxFit.cover,
+              imageBuilder: (context, imageProvider) => Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: imageProvider,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
               placeholder: (context, url) => Center(
                 child: SizedBox(
                   height: 40,
