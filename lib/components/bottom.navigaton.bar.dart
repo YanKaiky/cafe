@@ -11,7 +11,7 @@ class AppBottomNavigatonBar extends StatelessWidget {
       selectedItemColor: Colors.orange,
       items: const [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home_rounded),
+          icon: Icon(Icons.coffee_rounded),
           label: '',
         ),
         BottomNavigationBarItem(

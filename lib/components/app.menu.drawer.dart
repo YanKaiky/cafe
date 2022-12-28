@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:cafe/src/pages/home/home.page.dart';
 import 'package:cafe/src/pages/login/login.page.dart';
 import 'package:cafe/src/utils/user.secure.storage.dart';
@@ -28,7 +30,7 @@ class AppMenuDrawer extends StatelessWidget {
             ],
           ),
           ListTile(
-            leading: const Icon(Icons.shopping_bag_rounded),
+            leading: const Icon(Icons.coffee_rounded),
             title: const Text('Home'),
             onTap: () => Navigator.push(
               context,
