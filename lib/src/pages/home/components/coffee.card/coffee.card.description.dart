@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cafe/models/coffees.model.dart';
 import 'package:cafe/src/pages/home/components/coffee.card/coffee.card.counter.dart';
 import 'package:cafe/src/utils/constants.dart';
@@ -19,12 +20,25 @@ class CoffeCardDescription extends StatelessWidget {
       children: [
         Container(
           height: 180,
+          width: 180,
           decoration: BoxDecoration(
             color: Colors.white10,
             borderRadius: BorderRadius.circular(12),
-            image: DecorationImage(
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: CachedNetworkImage(
+              imageUrl: coffee.image,
               fit: BoxFit.cover,
-              image: NetworkImage(coffee.image, scale: 1.0),
+              placeholder: (context, url) => Center(
+                child: SizedBox(
+                  height: 40,
+                  width: 40,
+                  child: CircularProgressIndicator(
+                    color: Colors.orange,
+                  ),
+                ),
+              ),
             ),
           ),
         ),
