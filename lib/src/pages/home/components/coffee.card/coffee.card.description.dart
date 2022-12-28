@@ -23,7 +23,7 @@ class CoffeCardDescription extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage(coffee.image),
+              image: NetworkImage(coffee.image),
             ),
           ),
         ),

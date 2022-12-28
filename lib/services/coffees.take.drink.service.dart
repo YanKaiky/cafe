@@ -9,7 +9,7 @@ class CoffeesTakeDrinkService {
       'Paper Cup Coffee',
       'Choose the option.',
       Category.drink,
-      'assets/images/cup.jpg',
+      'https://coffy-online-shop.s3.sa-east-1.amazonaws.com/cup.jpg',
       DateTime.parse('2022-12-25T09:22:50.270Z'),
       DateTime.parse('2022-12-25T09:22:50.270Z'),
     ),

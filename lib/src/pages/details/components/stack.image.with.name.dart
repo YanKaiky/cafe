@@ -25,7 +25,7 @@ class StackImageWithName extends StatelessWidget {
             borderRadius: BorderRadius.circular(30),
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage(coffee.image),
+              image: NetworkImage(coffee.image),
             ),
           ),
         ),
