@@ -20,10 +20,11 @@ class CoffeCardDescription extends StatelessWidget {
         Container(
           height: 180,
           decoration: BoxDecoration(
+            color: Colors.white10,
             borderRadius: BorderRadius.circular(12),
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: NetworkImage(coffee.image),
+              image: NetworkImage(coffee.image, scale: 1.0),
             ),
           ),
         ),
