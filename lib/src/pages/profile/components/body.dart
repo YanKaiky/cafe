@@ -32,7 +32,7 @@ class _BodyState extends State<Body> {
                     width: 130,
                     height: 130,
                     decoration: BoxDecoration(
-                      border: Border.all(width: 4, color: Colors.green),
+                      border: Border.all(width: 4, color: Colors.orange),
                       boxShadow: [
                         BoxShadow(
                           spreadRadius: 2,
@@ -58,7 +58,7 @@ class _BodyState extends State<Body> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(width: 4, color: Colors.white),
-                        color: Colors.green,
+                        color: Colors.orange,
                       ),
                       child: IconButton(
                         icon: Icon(Icons.edit, color: Colors.white),
@@ -73,28 +73,36 @@ class _BodyState extends State<Body> {
             Divider(),
             SizedBox(height: 25),
             yTextField(
+              TextInputAction.next,
+              Icon(Icons.person_rounded),
               'Full name',
               false,
               null,
               'Yan Kaiky',
             ),
             yTextField(
+              TextInputAction.next,
+              Icon(Icons.mail_rounded),
               'Email',
               false,
               TextInputType.emailAddress,
               'yankaikys@gmail.com',
             ),
             yTextField(
-              'Password',
-              true,
-              null,
-              '123',
-            ),
-            yTextField(
+              TextInputAction.next,
+              Icon(Icons.location_searching_rounded),
               'Location',
               false,
               null,
               'SC, Brazil',
+            ),
+            yTextField(
+              TextInputAction.done,
+              Icon(Icons.key_rounded),
+              'Password',
+              true,
+              null,
+              '123',
             ),
             SizedBox(height: 35),
             Row(
@@ -118,7 +126,7 @@ class _BodyState extends State<Body> {
                   width: size.width / 3,
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.green),
+                      backgroundColor: MaterialStateProperty.all(Colors.orange),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12.0),
@@ -146,6 +154,8 @@ class _BodyState extends State<Body> {
   }
 
   Padding yTextField(
+    TextInputAction actionInput,
+    Icon icon,
     String label,
     bool obscureText,
     TextInputType? keyboardType,
@@ -154,9 +164,11 @@ class _BodyState extends State<Body> {
     return Padding(
       padding: EdgeInsets.only(bottom: 12),
       child: TextField(
-        obscureText: obscureText ? showPassword : showPassword,
+        obscureText: showPassword ? obscureText : showPassword,
         keyboardType: keyboardType,
+        textInputAction: actionInput,
         decoration: InputDecoration(
+          prefixIcon: icon,
           suffixIcon: obscureText
               ? IconButton(
                   icon: Icon(
@@ -174,7 +186,10 @@ class _BodyState extends State<Body> {
           labelText: label,
           hintText: hintText,
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 2.0),
+            borderSide: BorderSide(
+              width: 2.0,
+              color: Colors.orange,
+            ),
             borderRadius: BorderRadius.circular(12.0),
           ),
           border: OutlineInputBorder(

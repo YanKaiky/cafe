@@ -12,7 +12,7 @@ class CoffeeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        bottom: yDefaultPadding * 4,
+        bottom: yDefaultPadding,
         left: yDefaultPadding + 5,
       ),
       child: Container(

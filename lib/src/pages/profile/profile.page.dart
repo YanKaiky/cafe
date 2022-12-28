@@ -15,6 +15,7 @@ class _ProfilePageState extends State<ProfilePage> {
       backgroundColor: Colors.grey[900],
       appBar: AppBar(
         elevation: 0,
+        backgroundColor: Colors.transparent,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_rounded, color: Colors.white),
           onPressed: () {
