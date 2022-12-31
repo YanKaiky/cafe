@@ -10,6 +10,8 @@ class CoffeeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Padding(
       padding: const EdgeInsets.only(
         bottom: yDefaultPadding,
@@ -17,7 +19,7 @@ class CoffeeCard extends StatelessWidget {
       ),
       child: Container(
         padding: const EdgeInsets.all(12),
-        width: 200,
+        width: size.width / 2,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: Colors.black54,

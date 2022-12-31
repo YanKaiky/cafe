@@ -63,7 +63,7 @@ class StackImageWithName extends StatelessWidget {
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: Colors.black.withOpacity(0.5),
+                  color: Colors.black.withOpacity(0.2),
                 ),
                 child: IconButton(
                   icon: Icon(Icons.arrow_back_rounded),
@@ -75,7 +75,7 @@ class StackImageWithName extends StatelessWidget {
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: Colors.black.withOpacity(0.5),
+                  color: Colors.black.withOpacity(0.2),
                 ),
                 child: IconButton(
                   icon: favorite == true
