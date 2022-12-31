@@ -19,7 +19,7 @@ class CoffeCardDescriptionList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: size.height / 5,
+          height: size.height / 6,
           width: size.width * 2,
           decoration: BoxDecoration(
             color: Colors.white10,
@@ -62,17 +62,17 @@ class CoffeCardDescriptionList extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                coffee.name.length >= 14
-                    ? '${coffee.name.substring(0, 14)}...'
+                coffee.name.length >= 15
+                    ? '${coffee.name.substring(0, 15)}...'
                     : coffee.name,
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 15),
               ),
               SizedBox(height: 5),
               Text(
-                coffee.description.length >= 22
-                    ? '${coffee.description.substring(0, 22)}...'
+                coffee.description.length >= 14
+                    ? '${coffee.description.substring(0, 14)}...'
                     : coffee.description,
-                style: TextStyle(color: Colors.grey[700]),
+                style: TextStyle(fontSize: 12, color: Colors.grey[700]),
               ),
             ],
           ),

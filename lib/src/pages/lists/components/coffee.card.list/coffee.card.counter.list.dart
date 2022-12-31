@@ -44,7 +44,7 @@ class CoffeeCardCounterList extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               color: Colors.orange,
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(50.0),
             ),
             child: IconButton(
               icon: Icon(Icons.add),

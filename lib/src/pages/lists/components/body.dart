@@ -40,7 +40,7 @@ class Body extends StatelessWidget {
               itemCount: coffees.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: size.height / (size.height * 1.80),
+                childAspectRatio: size.height / (size.height * 1.5),
               ),
               itemBuilder: (context, i) => CoffeeCardList(
                 coffee: coffees[i],
