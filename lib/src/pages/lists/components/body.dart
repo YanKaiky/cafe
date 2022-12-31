@@ -1,16 +1,20 @@
-import 'package:cafe/services/coffees.service.dart';
 import 'package:cafe/src/pages/lists/components/coffee.card.list/coffee.card.list.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
-  const Body({super.key});
+  final String title;
+  final List coffees;
+
+  const Body({
+    super.key,
+    required this.title,
+    required this.coffees,
+  });
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
-    final coffees = CoffeesService.coffees;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,7 +29,7 @@ class Body extends StatelessWidget {
               ),
               SizedBox(width: 15),
               Text(
-                'All',
+                title,
                 style: Theme.of(context).textTheme.headline5?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),

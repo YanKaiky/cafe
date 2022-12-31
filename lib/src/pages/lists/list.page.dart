@@ -3,7 +3,14 @@ import 'package:cafe/src/pages/lists/components/body.dart';
 import 'package:flutter/material.dart';
 
 class ListPage extends StatelessWidget {
-  const ListPage({super.key});
+  final String title;
+  final List coffees;
+
+  const ListPage({
+    super.key,
+    required this.title,
+    required this.coffees,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +25,10 @@ class ListPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Body(),
+      body: Body(
+        title: title,
+        coffees: coffees,
+      ),
     );
   }
 }

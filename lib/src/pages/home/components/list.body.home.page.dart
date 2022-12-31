@@ -7,9 +7,11 @@ import 'package:flutter/material.dart';
 class ListBodyHomePage extends StatelessWidget {
   const ListBodyHomePage({
     Key? key,
+    required this.title,
     required this.coffees,
   }) : super(key: key);
 
+  final String title;
   final List coffees;
 
   @override
@@ -33,7 +35,11 @@ class ListBodyHomePage extends StatelessWidget {
                 press: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ListPage()),
+                    MaterialPageRoute(
+                        builder: (context) => ListPage(
+                              title: title,
+                              coffees: coffees,
+                            )),
                   );
                 },
               ),

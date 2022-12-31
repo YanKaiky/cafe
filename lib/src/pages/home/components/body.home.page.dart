@@ -63,44 +63,64 @@ class _BodyHomePageState extends State<BodyHomePage> {
             press: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ListPage()),
+                MaterialPageRoute(
+                  builder: (context) => ListPage(
+                    title: 'Drinks',
+                    coffees: drinks,
+                  ),
+                ),
               );
             },
           ),
-          ListBodyHomePage(coffees: drinks),
+          ListBodyHomePage(title: 'Drinks', coffees: drinks),
           SubTitle(
             visible: foods.length > 3 ? true : false,
             subtitle: 'Food',
             press: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ListPage()),
+                MaterialPageRoute(
+                  builder: (context) => ListPage(
+                    title: 'Food',
+                    coffees: foods,
+                  ),
+                ),
               );
             },
           ),
-          ListBodyHomePage(coffees: foods),
+          ListBodyHomePage(title: 'Food', coffees: foods),
           SubTitle(
             visible: takesDrink.length > 3 ? true : false,
             subtitle: 'Takes drink',
             press: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ListPage()),
+                MaterialPageRoute(
+                  builder: (context) => ListPage(
+                    title: 'Takes drink',
+                    coffees: takesDrink,
+                  ),
+                ),
               );
             },
           ),
-          ListBodyHomePage(coffees: takesDrink),
+          ListBodyHomePage(title: 'Takes drink', coffees: takesDrink),
           SubTitle(
             visible: takesFood.length > 3 ? true : false,
             subtitle: 'Takes food',
             press: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ListPage()),
+                MaterialPageRoute(
+                  builder: (context) => ListPage(
+                    title: 'Takes food',
+                    coffees: takesFood,
+                  ),
+                ),
               );
             },
           ),
-          ListBodyHomePage(coffees: takesFood),
+          ListBodyHomePage(title: 'Takes food', coffees: takesFood),
         ],
       ),
     );
