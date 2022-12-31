@@ -22,8 +22,8 @@ class ListAll extends StatelessWidget {
       children: [
         SubTitleWithList(title: 'Drinks', list: drinks),
         SubTitleWithList(title: 'Food', list: foods),
-        SubTitleWithList(title: 'Takes Drink', list: drinkAtHome),
-        SubTitleWithList(title: 'Takes Food', list: foodAtHome),
+        SubTitleWithList(title: 'Drink at Home', list: drinkAtHome),
+        SubTitleWithList(title: 'Food at Home', list: foodAtHome),
       ],
     );
   }

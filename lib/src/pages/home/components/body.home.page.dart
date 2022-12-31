@@ -6,7 +6,7 @@ import 'package:cafe/src/pages/home/components/coffee.type.dart';
 import 'package:cafe/src/pages/home/components/search.coffee.home.page.dart';
 import 'package:cafe/src/pages/home/components/subtitle.with.list.dart';
 import 'package:cafe/src/pages/home/components/title.home.page.dart';
-import 'package:cafe/src/pages/home/screens/list.all.dart';
+import 'package:cafe/src/pages/home/components/list.all.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:cafe/src/utils/enums/category.enum.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +46,7 @@ class _BodyHomePageState extends State<BodyHomePage> {
 
   final List coffeeType = [
     ['All', true],
-    ['Drink', false],
+    ['Drinks', false],
     ['Food', false],
     ['Drink at Home', false],
     ['Food at Home', false],
