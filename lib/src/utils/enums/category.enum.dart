@@ -1,5 +1,6 @@
 enum Category {
   drink,
   food,
-  take,
+  drinkAtHome,
+  foodAtHome,
 }

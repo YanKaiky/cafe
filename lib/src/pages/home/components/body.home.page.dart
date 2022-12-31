@@ -3,12 +3,12 @@ import 'package:cafe/services/coffees.food.service.dart';
 import 'package:cafe/services/coffees.take.drink.service.dart';
 import 'package:cafe/services/coffees.take.food.service.dart';
 import 'package:cafe/src/pages/home/components/coffee.type.dart';
-import 'package:cafe/src/pages/home/components/list.body.home.page.dart';
 import 'package:cafe/src/pages/home/components/search.coffee.home.page.dart';
-import 'package:cafe/src/pages/home/components/sub.title.dart';
+import 'package:cafe/src/pages/home/components/subtitle.with.list.dart';
 import 'package:cafe/src/pages/home/components/title.home.page.dart';
-import 'package:cafe/src/pages/lists/list.page.dart';
+import 'package:cafe/src/pages/home/screens/list.all.dart';
 import 'package:cafe/src/utils/constants.dart';
+import 'package:cafe/src/utils/enums/category.enum.dart';
 import 'package:flutter/material.dart';
 
 class BodyHomePage extends StatefulWidget {
@@ -21,24 +21,70 @@ class BodyHomePage extends StatefulWidget {
 }
 
 class _BodyHomePageState extends State<BodyHomePage> {
+  // Lists
   final drinks = CoffeesDrinkService.coffees;
   final foods = CoffeesFoodService.foods;
-  final takesDrink = CoffeesTakeDrinkService.takesDrink;
-  final takesFood = CoffeesTakeFoodService.takesFood;
+  final drinkAtHome = CoffeesTakeDrinkService.drinkAtHome;
+  final foodAtHome = CoffeesTakeFoodService.foodAtHome;
+
+  // Filters
+  final drinksFilter = CoffeesDrinkService.coffees.where(
+    (element) => element.category == Category.drink,
+  );
+
+  final foodsFilter = CoffeesFoodService.foods.where(
+    (element) => element.category == Category.food,
+  );
+
+  final takesDrinkFilter = CoffeesTakeDrinkService.drinkAtHome.where(
+    (element) => element.category == Category.drinkAtHome,
+  );
+
+  final takesFoodFilter = CoffeesTakeFoodService.foodAtHome.where(
+    (element) => element.category == Category.foodAtHome,
+  );
 
   final List coffeeType = [
     ['All', true],
-    ['Cappuccino', false],
-    ['Espresso', false],
-    ['Black', false],
-    ['Tea', false],
+    ['Drink', false],
     ['Food', false],
+    ['Drink at Home', false],
+    ['Food at Home', false],
   ];
 
-  void coffeeTypeSelected(int index) {
+  int selectedIndex = 0;
+
+  final List<Widget> screens = [
+    ListAll(
+      drinks: CoffeesDrinkService.coffees,
+      foods: CoffeesFoodService.foods,
+      drinkAtHome: CoffeesTakeDrinkService.drinkAtHome,
+      foodAtHome: CoffeesTakeFoodService.foodAtHome,
+    ),
+    SubTitleWithList(
+      title: 'Drinks',
+      list: CoffeesDrinkService.coffees,
+    ),
+    SubTitleWithList(
+      title: 'Food',
+      list: CoffeesFoodService.foods,
+    ),
+    SubTitleWithList(
+      title: 'Drink at Home',
+      list: CoffeesTakeDrinkService.drinkAtHome,
+    ),
+    SubTitleWithList(
+      title: 'Food at Home',
+      list: CoffeesTakeFoodService.foodAtHome,
+    ),
+  ];
+
+  void onTapped(int index) {
     setState(() {
       for (var i = 0; i < coffeeType.length; i++) {
         coffeeType[i][1] = false;
+
+        selectedIndex = index;
       }
 
       coffeeType[index][1] = true;
@@ -57,70 +103,7 @@ class _BodyHomePageState extends State<BodyHomePage> {
           SearchCoffeeHomePage(),
           SizedBox(height: 25),
           _listCoffeType(size),
-          SubTitle(
-            visible: drinks.length > 3 ? true : false,
-            subtitle: 'Drinks',
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ListPage(
-                    title: 'Drinks',
-                    coffees: drinks,
-                  ),
-                ),
-              );
-            },
-          ),
-          ListBodyHomePage(title: 'Drinks', coffees: drinks),
-          SubTitle(
-            visible: foods.length > 3 ? true : false,
-            subtitle: 'Food',
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ListPage(
-                    title: 'Food',
-                    coffees: foods,
-                  ),
-                ),
-              );
-            },
-          ),
-          ListBodyHomePage(title: 'Food', coffees: foods),
-          SubTitle(
-            visible: takesDrink.length > 3 ? true : false,
-            subtitle: 'Takes drink',
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ListPage(
-                    title: 'Takes drink',
-                    coffees: takesDrink,
-                  ),
-                ),
-              );
-            },
-          ),
-          ListBodyHomePage(title: 'Takes drink', coffees: takesDrink),
-          SubTitle(
-            visible: takesFood.length > 3 ? true : false,
-            subtitle: 'Takes food',
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ListPage(
-                    title: 'Takes food',
-                    coffees: takesFood,
-                  ),
-                ),
-              );
-            },
-          ),
-          ListBodyHomePage(title: 'Takes food', coffees: takesFood),
+          screens[selectedIndex]
         ],
       ),
     );
@@ -137,7 +120,7 @@ class _BodyHomePageState extends State<BodyHomePage> {
           return CoffeeType(
             type: coffeeType[i][0],
             isSelected: coffeeType[i][1],
-            onTap: () => coffeeTypeSelected(i),
+            onTap: () => onTapped(i),
           );
         },
       ),
