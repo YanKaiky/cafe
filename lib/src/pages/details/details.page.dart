@@ -1,4 +1,5 @@
 import 'package:cafe/models/coffees.model.dart';
+import 'package:cafe/src/pages/buy/buy.page.dart';
 import 'package:cafe/src/pages/details/components/description.dart';
 import 'package:cafe/src/pages/details/components/stack.image.with.name.dart';
 import 'package:cafe/src/utils/constants.dart';
@@ -63,7 +64,6 @@ class DetailsPage extends StatelessWidget {
                   ],
                 ),
                 OutlinedButton(
-                  onPressed: () {},
                   style: OutlinedButton.styleFrom(
                     backgroundColor: Colors.orange,
                     padding: EdgeInsets.symmetric(
@@ -78,6 +78,14 @@ class DetailsPage extends StatelessWidget {
                   child: Text(
                     'Buy now',
                     style: GoogleFonts.poppins(color: Colors.white),
+                  ),
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BuyPage(
+                        coffee: coffee,
+                      ),
+                    ),
                   ),
                 ),
               ],
