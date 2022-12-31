@@ -21,28 +21,49 @@ class BodyHomePage extends StatefulWidget {
 }
 
 class _BodyHomePageState extends State<BodyHomePage> {
-  // Lists
-  final drinks = CoffeesDrinkService.coffees;
-  final foods = CoffeesFoodService.foods;
-  final drinkAtHome = CoffeesTakeDrinkService.drinkAtHome;
-  final foodAtHome = CoffeesTakeFoodService.foodAtHome;
+  late List drinks;
+  late List foods;
+  late List drinkAtHome;
+  late List foodAtHome;
 
-  // Filters
-  final drinksFilter = CoffeesDrinkService.coffees.where(
-    (element) => element.category == Category.drink,
-  );
+  late List drinksFilter;
+  late List foodsFilter;
+  late List drinkAtHomeFilter;
+  late List foodAtHomeFilter;
+  late int idx;
 
-  final foodsFilter = CoffeesFoodService.foods.where(
-    (element) => element.category == Category.food,
-  );
+  @override
+  void initState() {
+    // Lists
+    drinks = CoffeesDrinkService.coffees;
+    foods = CoffeesFoodService.foods;
+    drinkAtHome = CoffeesTakeDrinkService.drinkAtHome;
+    foodAtHome = CoffeesTakeFoodService.foodAtHome;
 
-  final takesDrinkFilter = CoffeesTakeDrinkService.drinkAtHome.where(
-    (element) => element.category == Category.drinkAtHome,
-  );
+    // Filters
+    drinksFilter = drinks
+        .where(
+          (element) => element.category == Category.drink,
+        )
+        .toList();
+    foodsFilter = foods
+        .where(
+          (element) => element.category == Category.food,
+        )
+        .toList();
+    drinkAtHomeFilter = drinkAtHome
+        .where(
+          (element) => element.category == Category.drinkAtHome,
+        )
+        .toList();
+    foodAtHomeFilter = foodAtHome
+        .where(
+          (element) => element.category == Category.foodAtHome,
+        )
+        .toList();
 
-  final takesFoodFilter = CoffeesTakeFoodService.foodAtHome.where(
-    (element) => element.category == Category.foodAtHome,
-  );
+    super.initState();
+  }
 
   final List coffeeType = [
     ['All', true],
