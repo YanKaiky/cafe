@@ -28,7 +28,10 @@ class StackImageWithName extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(30),
             child: CachedNetworkImage(
+              key: UniqueKey(),
+              cacheKey: coffee.guid,
               imageUrl: coffee.image,
+              maxHeightDiskCache: 1000,
               fit: BoxFit.cover,
               imageBuilder: (context, imageProvider) => Container(
                 decoration: BoxDecoration(
