@@ -1,5 +1,5 @@
 import 'package:cafe/services/coffees.service.dart';
-import 'package:cafe/src/pages/home/components/coffee.card/coffee.card.dart';
+import 'package:cafe/src/pages/lists/components/coffee.card.list/coffee.card.list.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +8,8 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     final coffees = CoffeesService.coffees;
 
     return Column(
@@ -37,12 +39,10 @@ class Body extends StatelessWidget {
             child: GridView.builder(
               itemCount: coffees.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 1,
-                mainAxisSpacing: yDefaultPadding,
-                crossAxisSpacing: yDefaultPadding,
-                childAspectRatio: 0.90,
+                crossAxisCount: 2,
+                childAspectRatio: size.height / (size.height * 1.80),
               ),
-              itemBuilder: (context, i) => CoffeeCard(
+              itemBuilder: (context, i) => CoffeeCardList(
                 coffee: coffees[i],
               ),
             ),
