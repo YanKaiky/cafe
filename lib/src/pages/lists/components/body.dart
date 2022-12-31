@@ -20,20 +20,31 @@ class Body extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: yDefaultPadding),
+          padding: const EdgeInsets.only(
+            top: yDefaultPadding,
+            right: yDefaultPadding + 5,
+            bottom: yDefaultPadding,
+            left: yDefaultPadding / 2,
+          ),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              IconButton(
-                onPressed: () => Navigator.pop(context),
-                icon: Icon(Icons.arrow_back_rounded),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () => Navigator.pop(context),
+                    icon: Icon(Icons.arrow_back_rounded),
+                  ),
+                  SizedBox(width: 15),
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.headline5?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ],
               ),
-              SizedBox(width: 15),
-              Text(
-                title,
-                style: Theme.of(context).textTheme.headline5?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
+              Text('List total: (${coffees.length})')
             ],
           ),
         ),
