@@ -3,10 +3,10 @@ import 'package:cafe/src/pages/details/details.page.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class CoffeeCardCounter extends StatelessWidget {
+class CoffeeCardInformation extends StatelessWidget {
   final CoffeesModel coffee;
 
-  const CoffeeCardCounter({
+  const CoffeeCardInformation({
     Key? key,
     required this.coffee,
   }) : super(key: key);
@@ -47,7 +47,7 @@ class CoffeeCardCounter extends StatelessWidget {
               borderRadius: BorderRadius.circular(50.0),
             ),
             child: IconButton(
-              icon: Icon(Icons.add),
+              icon: Icon(Icons.description_rounded),
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(

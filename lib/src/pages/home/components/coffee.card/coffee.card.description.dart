@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cafe/models/coffees.model.dart';
-import 'package:cafe/src/pages/home/components/coffee.card/coffee.card.counter.dart';
+import 'package:cafe/src/pages/home/components/coffee.card/coffee.card.information.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -80,7 +80,7 @@ class CoffeCardDescription extends StatelessWidget {
           ),
         ),
         Spacer(),
-        CoffeeCardCounter(coffee: coffee),
+        CoffeeCardInformation(coffee: coffee),
         Spacer(),
         _ratings(),
       ],

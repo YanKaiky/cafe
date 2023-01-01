@@ -1,18 +1,40 @@
 import 'package:cafe/models/coffees.model.dart';
 import 'package:cafe/src/pages/buy/buy.page.dart';
+import 'package:cafe/src/pages/details/components/cart.counter.dart';
 import 'package:cafe/src/pages/details/components/description.dart';
 import 'package:cafe/src/pages/details/components/stack.image.with.name.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DetailsPage extends StatelessWidget {
+class DetailsPage extends StatefulWidget {
   final CoffeesModel coffee;
 
   const DetailsPage({
     Key? key,
     required this.coffee,
   }) : super(key: key);
+
+  @override
+  State<DetailsPage> createState() => _DetailsPageState();
+}
+
+class _DetailsPageState extends State<DetailsPage> {
+  final List buttonsSize = [
+    ['S', false],
+    ['M', true],
+    ['L', false],
+  ];
+
+  void onTapped(int index) {
+    setState(() {
+      for (var i = 0; i < buttonsSize.length; i++) {
+        buttonsSize[i][1] = false;
+      }
+
+      buttonsSize[index][1] = true;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,19 +45,28 @@ class DetailsPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          StackImageWithName(size: size, coffee: coffee),
-          _subTitle('Description'),
-          Description(coffee: coffee),
+          StackImageWithName(size: size, coffee: widget.coffee),
+          subTitleWithCounter(),
+          Description(coffee: widget.coffee),
           _subTitle('Size'),
-          Padding(
+          Container(
+            height: size.height / 22,
             padding: EdgeInsets.symmetric(horizontal: yDefaultPadding),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                _buttonSize('S', false, size),
-                _buttonSize('M', true, size),
-                _buttonSize('L', false, size),
-              ],
+            child: ListView.separated(
+              padding: EdgeInsets.only(right: yDefaultPadding + 5),
+              scrollDirection: Axis.horizontal,
+              itemCount: buttonsSize.length,
+              separatorBuilder: (context, _) => SizedBox(
+                width: size.width / 12.5,
+              ),
+              itemBuilder: (context, i) {
+                return _buttonSize(
+                  i,
+                  buttonsSize[i][0],
+                  buttonsSize[i][1],
+                  size,
+                );
+              },
             ),
           ),
           Padding(
@@ -56,7 +87,7 @@ class DetailsPage extends StatelessWidget {
                     ),
                     SizedBox(width: 10),
                     Text(
-                      coffee.price.toStringAsFixed(2),
+                      widget.coffee.price.toStringAsFixed(2),
                       style: GoogleFonts.poppins(
                         fontSize: 25,
                       ),
@@ -83,7 +114,7 @@ class DetailsPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => BuyPage(
-                        coffee: coffee,
+                        coffee: widget.coffee,
                       ),
                     ),
                   ),
@@ -96,9 +127,22 @@ class DetailsPage extends StatelessWidget {
     );
   }
 
-  OutlinedButton _buttonSize(String label, bool isSelected, Size size) {
+  Row subTitleWithCounter() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        _subTitle('Description'),
+        Padding(
+          padding: const EdgeInsets.only(right: yDefaultPadding),
+          child: CartCounter(),
+        ),
+      ],
+    );
+  }
+
+  OutlinedButton _buttonSize(int i, String label, bool isSelected, Size size) {
     return OutlinedButton(
-      onPressed: () {},
+      onPressed: () => onTapped(i),
       style: OutlinedButton.styleFrom(
         padding: EdgeInsets.symmetric(horizontal: size.width / 9),
         side: isSelected ? BorderSide(color: Colors.orange) : null,

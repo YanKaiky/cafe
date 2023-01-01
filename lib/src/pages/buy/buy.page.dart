@@ -13,22 +13,33 @@ class BuyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return AlertDialog(
-      title: Text("Buy now"),
-      titleTextStyle: TextStyle(
-        fontWeight: FontWeight.bold,
-        color: Colors.black,
-        fontSize: 20,
-      ),
-      actionsOverflowButtonSpacing: 15,
-      actions: [
-        ElevatedButton(
-          onPressed: () => Navigator.pop(context),
-          child: Text("Back"),
+    return Scaffold(
+      appBar: AppBar(
+        leadingWidth: size.width / 3,
+        leading: Container(
+          padding: EdgeInsets.all(12),
+          child: OutlinedButton.icon(
+            style: OutlinedButton.styleFrom(
+              padding: EdgeInsets.all(8),
+              side: BorderSide(color: Colors.red, width: 1.0),
+            ),
+            icon: Icon(Icons.close_rounded, color: Colors.red, size: 18),
+            label: Text(
+              'Cancel',
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 15,
+              ),
+            ),
+            onPressed: () => Navigator.pop(context),
+          ),
         ),
-        ElevatedButton(onPressed: () {}, child: Text("Next")),
-      ],
-      content: Text('\$${coffee.price.toStringAsFixed(2)}'),
+      ),
+      body: Center(
+        child: Text(
+          '\$${coffee.price.toStringAsFixed(2)}',
+        ),
+      ),
     );
   }
 }

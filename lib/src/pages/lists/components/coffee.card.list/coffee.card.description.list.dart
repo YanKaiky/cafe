@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cafe/models/coffees.model.dart';
-import 'package:cafe/src/pages/lists/components/coffee.card.list/coffee.card.counter.list.dart';
+import 'package:cafe/src/pages/lists/components/coffee.card.list/coffee.card.information.list.dart';
 import 'package:flutter/material.dart';
 
 class CoffeCardDescriptionList extends StatelessWidget {
@@ -78,7 +78,7 @@ class CoffeCardDescriptionList extends StatelessWidget {
           ),
         ),
         Spacer(),
-        CoffeeCardCounterList(coffee: coffee),
+        CoffeeCardInformationList(coffee: coffee),
         Spacer(),
       ],
     );

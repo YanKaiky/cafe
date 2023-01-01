@@ -91,13 +91,14 @@ class StackImageWithName extends StatelessWidget {
           bottom: 0,
           child: Container(
             padding: EdgeInsets.all(yDefaultPadding),
-            height: size.height / 5.5,
+            height: size.height / 7,
             width: size.width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color: Colors.black.withOpacity(0.4),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
