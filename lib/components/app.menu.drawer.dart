@@ -1,6 +1,11 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:cafe/services/coffees.drink.service.dart';
+import 'package:cafe/services/coffees.food.service.dart';
+import 'package:cafe/services/coffees.take.drink.service.dart';
+import 'package:cafe/services/coffees.take.food.service.dart';
 import 'package:cafe/src/pages/home/home.page.dart';
+import 'package:cafe/src/pages/lists/list.page.dart';
 import 'package:cafe/src/pages/login/login.page.dart';
 import 'package:cafe/src/utils/user.secure.storage.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +50,12 @@ class AppMenuDrawer extends StatelessWidget {
             title: const Text('Drinks'),
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomePage()),
+              MaterialPageRoute(
+                builder: (context) => ListPage(
+                  title: 'Drinks',
+                  coffees: CoffeesDrinkService.coffees,
+                ),
+              ),
             ),
           ),
           ListTile(
@@ -53,7 +63,12 @@ class AppMenuDrawer extends StatelessWidget {
             title: const Text('Food'),
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomePage()),
+              MaterialPageRoute(
+                builder: (context) => ListPage(
+                  title: 'Food',
+                  coffees: CoffeesFoodService.foods,
+                ),
+              ),
             ),
           ),
           ListTile(
@@ -61,7 +76,12 @@ class AppMenuDrawer extends StatelessWidget {
             title: const Text('Drinks at home'),
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomePage()),
+              MaterialPageRoute(
+                builder: (context) => ListPage(
+                  title: 'Drinks at home',
+                  coffees: CoffeesTakeDrinkService.drinkAtHome,
+                ),
+              ),
             ),
           ),
           ListTile(
@@ -69,7 +89,12 @@ class AppMenuDrawer extends StatelessWidget {
             title: const Text('Food at home'),
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomePage()),
+              MaterialPageRoute(
+                builder: (context) => ListPage(
+                  title: 'Food at home',
+                  coffees: CoffeesTakeFoodService.foodAtHome,
+                ),
+              ),
             ),
           ),
           Spacer(),
