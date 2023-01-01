@@ -116,7 +116,7 @@ class CoffeesService {
     CoffeesModel(
       '18231870-0b3f-418e-8c6f-d238bf9dab09',
       4.5,
-      'Christmas Cookies',
+      'Cookies Banilla',
       'Banilla with Black chocolate.',
       Category.food,
       'https://coffy-online-shop.s3.sa-east-1.amazonaws.com/cookies.jpg',

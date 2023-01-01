@@ -1,7 +1,7 @@
 import 'package:cafe/models/coffees.model.dart';
 import 'package:cafe/src/utils/enums/category.enum.dart';
 
-class CoffeesTakeDrinkService {
+class CoffeesDrinkAtHomeService {
   static List<CoffeesModel> drinkAtHome = [
     CoffeesModel(
       '74ea00a8-e397-427c-9d29-363dd35df2e0',

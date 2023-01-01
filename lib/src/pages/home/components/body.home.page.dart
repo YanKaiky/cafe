@@ -1,7 +1,7 @@
 import 'package:cafe/services/coffees.drink.service.dart';
 import 'package:cafe/services/coffees.food.service.dart';
-import 'package:cafe/services/coffees.take.drink.service.dart';
-import 'package:cafe/services/coffees.take.food.service.dart';
+import 'package:cafe/services/coffees.drink.at.home.service.dart';
+import 'package:cafe/services/coffees.food.at.home.service.dart';
 import 'package:cafe/src/pages/home/components/coffee.type.dart';
 import 'package:cafe/src/pages/home/components/search.coffee.home.page.dart';
 import 'package:cafe/src/pages/home/components/subtitle.with.list.dart';
@@ -37,8 +37,8 @@ class _BodyHomePageState extends State<BodyHomePage> {
     // Lists
     drinks = CoffeesDrinkService.coffees;
     foods = CoffeesFoodService.foods;
-    drinkAtHome = CoffeesTakeDrinkService.drinkAtHome;
-    foodAtHome = CoffeesTakeFoodService.foodAtHome;
+    drinkAtHome = CoffeesDrinkAtHomeService.drinkAtHome;
+    foodAtHome = CoffeesFoodAtHomeService.foodAtHome;
 
     // Filters
     drinksFilter = drinks
@@ -79,8 +79,8 @@ class _BodyHomePageState extends State<BodyHomePage> {
     ListAll(
       drinks: CoffeesDrinkService.coffees,
       foods: CoffeesFoodService.foods,
-      drinkAtHome: CoffeesTakeDrinkService.drinkAtHome,
-      foodAtHome: CoffeesTakeFoodService.foodAtHome,
+      drinkAtHome: CoffeesDrinkAtHomeService.drinkAtHome,
+      foodAtHome: CoffeesFoodAtHomeService.foodAtHome,
     ),
     SubTitleWithList(
       title: 'Drinks',
@@ -92,11 +92,11 @@ class _BodyHomePageState extends State<BodyHomePage> {
     ),
     SubTitleWithList(
       title: 'Drink at Home',
-      list: CoffeesTakeDrinkService.drinkAtHome,
+      list: CoffeesDrinkAtHomeService.drinkAtHome,
     ),
     SubTitleWithList(
       title: 'Food at Home',
-      list: CoffeesTakeFoodService.foodAtHome,
+      list: CoffeesFoodAtHomeService.foodAtHome,
     ),
   ];
 

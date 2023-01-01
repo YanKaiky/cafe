@@ -1,7 +1,9 @@
+// ignore_for_file: prefer_final_fields
+
 import 'package:cafe/components/app.menu.drawer.dart';
+import 'package:cafe/src/pages/cart/cart.page.dart';
+import 'package:cafe/src/pages/favorites/favorites.page.dart';
 import 'package:cafe/src/pages/home/components/body.home.page.dart';
-import 'package:cafe/components/bottom.navigaton.bar.dart';
-import 'package:cafe/src/pages/profile/profile.page.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -13,14 +15,55 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+
+  final List<Widget> _screens = [
+    BodyHomePage(),
+    CartPage(),
+    FavoritesPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[900],
       drawer: AppMenuDrawer(),
       appBar: _buildAppBar(),
-      body: BodyHomePage(),
-      bottomNavigationBar: AppBottomNavigatonBar(),
+      body: _screens[_selectedIndex],
+      bottomNavigationBar: appBottomNavigatonBar(),
+    );
+  }
+
+  Widget appBottomNavigatonBar() {
+    return BottomNavigationBar(
+      elevation: 0,
+      backgroundColor: Colors.grey[900],
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      onTap: onTabTapped,
+      items: [
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.coffee_rounded,
+            color: _selectedIndex == 0 ? Colors.orange : Colors.grey[700],
+          ),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.favorite_rounded,
+            color: _selectedIndex == 1 ? Colors.orange : Colors.grey[700],
+          ),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.notifications_rounded,
+            color: _selectedIndex == 2 ? Colors.orange : Colors.grey[700],
+          ),
+          label: '',
+        ),
+      ],
     );
   }
 
@@ -32,16 +75,22 @@ class _HomePageState extends State<HomePage> {
         Padding(
           padding: const EdgeInsets.only(right: yDefaultPadding / 2),
           child: IconButton(
-            icon: Icon(Icons.person_rounded),
+            icon: Icon(Icons.local_grocery_store_rounded),
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ProfilePage(),
+                builder: (context) => CartPage(),
               ),
             ),
           ),
         ),
       ],
     );
+  }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 }

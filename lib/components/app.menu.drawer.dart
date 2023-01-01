@@ -2,11 +2,12 @@
 
 import 'package:cafe/services/coffees.drink.service.dart';
 import 'package:cafe/services/coffees.food.service.dart';
-import 'package:cafe/services/coffees.take.drink.service.dart';
-import 'package:cafe/services/coffees.take.food.service.dart';
+import 'package:cafe/services/coffees.drink.at.home.service.dart';
+import 'package:cafe/services/coffees.food.at.home.service.dart';
 import 'package:cafe/src/pages/home/home.page.dart';
 import 'package:cafe/src/pages/lists/list.page.dart';
 import 'package:cafe/src/pages/login/login.page.dart';
+import 'package:cafe/src/pages/profile/profile.page.dart';
 import 'package:cafe/src/utils/user.secure.storage.dart';
 import 'package:flutter/material.dart';
 
@@ -79,7 +80,7 @@ class AppMenuDrawer extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) => ListPage(
                   title: 'Drinks at home',
-                  coffees: CoffeesTakeDrinkService.drinkAtHome,
+                  coffees: CoffeesDrinkAtHomeService.drinkAtHome,
                 ),
               ),
             ),
@@ -92,8 +93,19 @@ class AppMenuDrawer extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) => ListPage(
                   title: 'Food at home',
-                  coffees: CoffeesTakeFoodService.foodAtHome,
+                  coffees: CoffeesFoodAtHomeService.foodAtHome,
                 ),
+              ),
+            ),
+          ),
+          Divider(),
+          ListTile(
+            leading: const Icon(Icons.person_rounded),
+            title: const Text('Profile'),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProfilePage(),
               ),
             ),
           ),

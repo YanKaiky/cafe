@@ -1,7 +1,7 @@
 import 'package:cafe/models/coffees.model.dart';
 import 'package:cafe/src/utils/enums/category.enum.dart';
 
-class CoffeesTakeFoodService {
+class CoffeesFoodAtHomeService {
   static List<CoffeesModel> foodAtHome = [
     CoffeesModel(
       '2eac1710-6dab-43f7-a85f-0fb186b4d7be',
@@ -16,7 +16,7 @@ class CoffeesTakeFoodService {
     CoffeesModel(
       '18231870-0b3f-418e-8c6f-d238bf9dab09',
       4.5,
-      'Christmas Cookies',
+      'Cookies Baunilha',
       'Banilla with Black chocolate.',
       Category.foodAtHome,
       'https://coffy-online-shop.s3.sa-east-1.amazonaws.com/cookies.jpg',
