@@ -17,8 +17,11 @@ class AppMenuDrawer extends StatelessWidget {
         children: [
           UserAccountsDrawerHeader(
             decoration: BoxDecoration(color: Colors.grey[900]),
-            currentAccountPicture: Image.network(
-              'https://www.github.com/YanKaiky.png',
+            currentAccountPicture: CircleAvatar(
+              backgroundColor: Colors.white10,
+              backgroundImage: NetworkImage(
+                'https://www.einerd.com.br/wp-content/uploads/2019/05/Miles-Morales-capa.png',
+              ),
             ),
             accountName: const Text('Yan Kaiky'),
             accountEmail: const Text('yankaikys@gmail.com'),
@@ -32,6 +35,38 @@ class AppMenuDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.coffee_rounded),
             title: const Text('Home'),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.local_drink_rounded),
+            title: const Text('Drinks'),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.local_dining_rounded),
+            title: const Text('Food'),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.brunch_dining_outlined),
+            title: const Text('Drinks at home'),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.food_bank_rounded),
+            title: const Text('Food at home'),
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => HomePage()),

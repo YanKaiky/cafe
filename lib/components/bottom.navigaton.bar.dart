@@ -19,7 +19,7 @@ class AppBottomNavigatonBar extends StatelessWidget {
           label: '',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.notifications_rounded),
+          icon: Icon(Icons.local_grocery_store_rounded),
           label: '',
         ),
       ],

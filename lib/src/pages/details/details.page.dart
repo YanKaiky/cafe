@@ -94,11 +94,26 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                   ],
                 ),
+                Container(
+                  height: 60,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50.0),
+                    color: Colors.blue,
+                  ),
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.add_shopping_cart_rounded,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(
                     backgroundColor: Colors.orange,
                     padding: EdgeInsets.symmetric(
-                      horizontal: size.width / 4,
+                      horizontal: size.width / 6,
                       vertical: 20,
                     ),
                     side: BorderSide(color: Colors.orange),
