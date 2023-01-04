@@ -15,7 +15,7 @@ class CartPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_rounded, color: Colors.white),
-          onPressed: () {},
+          onPressed: () => Navigator.pop(context),
         ),
         actions: const [
           Center(
