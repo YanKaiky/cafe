@@ -18,6 +18,7 @@ class ListPage extends StatelessWidget {
       drawer: AppMenuDrawer(),
       appBar: AppBar(
         elevation: 0,
+        backgroundColor: Colors.transparent,
         actions: [
           IconButton(
             icon: Icon(Icons.search),
