@@ -24,24 +24,13 @@ class _BodyCartState extends State<BodyCart> {
         width: size.width / 12.5,
       ),
       itemBuilder: (context, i) {
-        return Dismissible(
-          key: UniqueKey(),
-          background: Container(
-            color: Colors.red,
-            child: Icon(Icons.delete_rounded),
-          ),
-          onDismissed: (DismissDirection direction) {
+        return CardCart(
+          cart: cart[i],
+          remove: () {
             setState(() {
               cart.removeAt(i);
             });
-
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              backgroundColor: Colors.orange,
-              content: Text('${cart[i].name} removed'),
-              dismissDirection: DismissDirection.down,
-            ));
           },
-          child: CardCart(cart: cart[i]),
         );
       },
     );
