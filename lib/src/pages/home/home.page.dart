@@ -4,6 +4,7 @@ import 'package:cafe/components/app.menu.drawer.dart';
 import 'package:cafe/src/pages/cart/cart.page.dart';
 import 'package:cafe/src/pages/favorites/favorites.page.dart';
 import 'package:cafe/src/pages/home/components/body.home.page.dart';
+import 'package:cafe/src/pages/notifications/notifications.page.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -19,8 +20,8 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _screens = [
     BodyHomePage(),
-    CartPage(),
     FavoritesPage(),
+    NotificationsPage(),
   ];
 
   @override
@@ -28,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[900],
       drawer: AppMenuDrawer(),
-      appBar: _buildAppBar(),
+      appBar: _selectedIndex == 0 ? _buildAppBar() : null,
       body: _screens[_selectedIndex],
       bottomNavigationBar: appBottomNavigatonBar(),
     );

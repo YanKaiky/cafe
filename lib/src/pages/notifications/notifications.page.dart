@@ -1,8 +1,8 @@
 import 'package:cafe/src/pages/cart/components/body.cart.dart';
 import 'package:flutter/material.dart';
 
-class CartPage extends StatelessWidget {
-  const CartPage({super.key});
+class NotificationsPage extends StatelessWidget {
+  const NotificationsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class CartPage extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(right: 16.0),
               child: Text(
-                'Cart',
+                'Notifications',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,

@@ -36,10 +36,11 @@ class ListBodyHomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ListPage(
-                              title: title,
-                              coffees: coffees,
-                            )),
+                      builder: (context) => ListPage(
+                        title: title,
+                        coffees: coffees,
+                      ),
+                    ),
                   );
                 },
               ),
