@@ -43,22 +43,22 @@ class _BodyHomePageState extends State<BodyHomePage> {
     // Filters
     drinksFilter = drinks
         .where(
-          (element) => element.category == Category.drink,
+          (element) => element.category == CategoryEnum.drink,
         )
         .toList();
     foodsFilter = foods
         .where(
-          (element) => element.category == Category.food,
+          (element) => element.category == CategoryEnum.food,
         )
         .toList();
     drinkAtHomeFilter = drinkAtHome
         .where(
-          (element) => element.category == Category.drinkAtHome,
+          (element) => element.category == CategoryEnum.drinkAtHome,
         )
         .toList();
     foodAtHomeFilter = foodAtHome
         .where(
-          (element) => element.category == Category.foodAtHome,
+          (element) => element.category == CategoryEnum.foodAtHome,
         )
         .toList();
 

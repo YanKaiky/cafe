@@ -5,7 +5,7 @@ class CoffeesModel {
   final double price;
   final String name;
   final String description;
-  final Category category;
+  final CategoryEnum category;
   final String image;
   final DateTime createdAt;
   final DateTime updatedAt;

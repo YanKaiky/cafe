@@ -1,14 +1,14 @@
 import 'package:cafe/src/utils/enums/category.enum.dart';
 
-categoryValidation(Category category) {
+categoryValidation(CategoryEnum category) {
   switch (category) {
-    case Category.drink:
+    case CategoryEnum.drink:
       return 'Drink';
-    case Category.food:
+    case CategoryEnum.food:
       return 'Food';
-    case Category.drinkAtHome:
+    case CategoryEnum.drinkAtHome:
       return 'Drink at home';
-    case Category.foodAtHome:
+    case CategoryEnum.foodAtHome:
       return 'Food at home';
     default:
   }

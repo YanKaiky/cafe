@@ -1,19 +1,18 @@
-import 'package:cafe/models/notifications.model.dart';
-import 'package:cafe/src/pages/notifications/components/card.notifications/card.notifications.information.dart';
-import 'package:cafe/src/pages/notifications/components/card.notifications/card.notifications.status.dart';
+import 'package:cafe/models/coffees.model.dart';
+import 'package:cafe/src/pages/favorites/components/card.favorite/card.favorite.image.dart';
+import 'package:cafe/src/pages/favorites/components/card.favorite/card.favorite.information.dart';
 import 'package:cafe/src/utils/constants.dart';
-import 'package:cafe/src/utils/enums/status.enum.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CardNotifications extends StatelessWidget {
-  const CardNotifications({
+class CardFavorites extends StatelessWidget {
+  const CardFavorites({
     Key? key,
-    required this.notification,
+    required this.favorite,
     required this.remove,
   }) : super(key: key);
 
-  final NotificationsModel notification;
+  final CoffeesModel favorite;
   final VoidCallback remove;
 
   @override
@@ -33,7 +32,7 @@ class CardNotifications extends StatelessWidget {
           SnackBar(
             backgroundColor: Colors.orange,
             content: Text(
-              '${notification.name} removed',
+              '${favorite.name} removed',
               style: GoogleFonts.poppins(),
             ),
             behavior: SnackBarBehavior.floating,
@@ -42,7 +41,7 @@ class CardNotifications extends StatelessWidget {
       },
       child: Container(
         padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-        height: size.height / 6,
+        height: size.height / 5.5,
         width: double.maxFinite,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
@@ -55,11 +54,9 @@ class CardNotifications extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(yDefaultPadding),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                CardNotificationsImformation(notification: notification),
-                VerticalDivider(),
-                CardNotificationsStatus(status: StatusEnum.delivering),
+                CardFavoriteImage(favorite: favorite),
+                CardFavoriteImformation(favorite: favorite),
               ],
             ),
           ),

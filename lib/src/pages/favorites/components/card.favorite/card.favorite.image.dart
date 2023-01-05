@@ -3,13 +3,13 @@ import 'package:cafe/models/coffees.model.dart';
 import 'package:cafe/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class CardNotificationsImage extends StatelessWidget {
-  const CardNotificationsImage({
+class CardFavoriteImage extends StatelessWidget {
+  const CardFavoriteImage({
     Key? key,
-    required this.cart,
+    required this.favorite,
   }) : super(key: key);
 
-  final CoffeesModel cart;
+  final CoffeesModel favorite;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +31,8 @@ class CardNotificationsImage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 child: CachedNetworkImage(
                   key: UniqueKey(),
-                  cacheKey: cart.guid,
-                  imageUrl: cart.image,
+                  cacheKey: favorite.guid,
+                  imageUrl: favorite.image,
                   maxHeightDiskCache: 1000,
                   fit: BoxFit.cover,
                   imageBuilder: (context, imageProvider) => Container(

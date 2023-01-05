@@ -1,5 +1,5 @@
 import 'package:cafe/models/coffees.model.dart';
-import 'package:cafe/src/utils/category.validation.dart';
+import 'package:cafe/src/utils/functions/category.validation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,4 +1,4 @@
-enum Category {
+enum CategoryEnum {
   drink,
   food,
   drinkAtHome,

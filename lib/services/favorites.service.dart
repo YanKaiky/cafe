@@ -1,8 +1,8 @@
 import 'package:cafe/models/coffees.model.dart';
 import 'package:cafe/src/utils/enums/category.enum.dart';
 
-class CartService {
-  static List<CoffeesModel> cart = [
+class FavoritesService {
+  static List<CoffeesModel> favorites = [
     CoffeesModel(
       '74ea00a8-e397-427c-9d29-363dd35df2e0',
       5.0,

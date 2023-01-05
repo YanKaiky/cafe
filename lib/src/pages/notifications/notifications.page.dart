@@ -1,4 +1,4 @@
-import 'package:cafe/src/pages/cart/components/body.cart.dart';
+import 'package:cafe/src/pages/notifications/components/body.notifications.dart';
 import 'package:flutter/material.dart';
 
 class NotificationsPage extends StatelessWidget {
@@ -6,8 +6,6 @@ class NotificationsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -32,7 +30,7 @@ class NotificationsPage extends StatelessWidget {
           )
         ],
       ),
-      body: BodyCart(),
+      body: BodyNotifications(),
     );
   }
 }

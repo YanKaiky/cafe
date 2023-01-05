@@ -1,14 +1,14 @@
-import 'package:cafe/models/notifications.model.dart';
+import 'package:cafe/models/coffees.model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CardNotificationsImformation extends StatelessWidget {
-  const CardNotificationsImformation({
+class CardFavoriteImformation extends StatelessWidget {
+  const CardFavoriteImformation({
     Key? key,
-    required this.notification,
+    required this.favorite,
   }) : super(key: key);
 
-  final NotificationsModel notification;
+  final CoffeesModel favorite;
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +17,16 @@ class CardNotificationsImformation extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          notification.name,
+          favorite.name,
           style: GoogleFonts.poppins(
             fontSize: 15,
             fontWeight: FontWeight.bold,
           ),
         ),
         Text(
-          notification.message.length >= 27
-              ? '${notification.message.substring(0, 27)}...'
-              : notification.message,
+          favorite.description.length >= 27
+              ? '${favorite.description.substring(0, 27)}...'
+              : favorite.description,
           style: GoogleFonts.poppins(fontSize: 12),
         ),
         Row(
@@ -41,7 +41,7 @@ class CardNotificationsImformation extends StatelessWidget {
             ),
             SizedBox(width: 10),
             Text(
-              notification.price.toStringAsFixed(2),
+              favorite.price.toStringAsFixed(2),
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
